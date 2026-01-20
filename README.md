@@ -97,14 +97,10 @@ flutter build ios --release
 
 ## Implementation Notes & Assumptions
 
-_Document any assumptions made during implementation here. Examples:_
-
-- State management approach used
-- Navigation structure
-- Custom widgets created
-- API integration methods (if applicable)
-- Responsive design breakpoints
-- Any deviations from the Figma design and the reasoning
+- **VS Code Configuration** - Added a `.vscode` folder containing `launch.json` for debugging configuration
+- **Flutter Gen** - Integrated flutter_gen for convenient asset importing (images, fonts, icons) to reduce manual string references
+- **Global Custom Components** - Created reusable custom components in `core/components/` for consistent UI patterns across the app
+- **Reusable View Widgets** - Built modular view widgets in feature folders for easier composition and maintenance
 
 ## Project Structure
 
@@ -114,8 +110,12 @@ credpal/
 │   ├── main.dart           # Application entry point
 │   ├── app/                # App-level configuration
 │   ├── core/               # Core utilities and constants
-│   └── feature/            # Feature modules
-│       └── home/           # Home feature implementation
+│   │   └── components/     # Reusable custom components
+│   ├── feature/            # Feature modules
+│   │   └── home/           # Home feature implementation
+│   └── gen/                # Generated files (flutter_gen assets)
+├── .vscode/
+│   └── launch.json         # VS Code debugging configuration
 ├── assets/
 │   ├── images/             # Image assets
 │   ├── icons/              # Icon assets
@@ -132,3 +132,19 @@ credpal/
 - Test on both mobile (iOS/Android) and web platforms
 
 
+## Screenshots
+
+Here are the screenshots of the app on Android & iOS devices:
+
+- Android : 
+   [Screen 1](assets/images/android_screenshot_1.png)
+   [Screen 2](assets/images/android_screenshot_2.png)
+
+- iOS : 
+   [Screen 1](assets/images/ios_screenshot_1.png)
+   [Screen 2](assets/images/ios_screenshot_2.png)
+
+
+## Apk Download
+
+You can download the APK file from [here]().

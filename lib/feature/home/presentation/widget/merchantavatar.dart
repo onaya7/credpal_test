@@ -44,7 +44,7 @@ class MerchantAvatar extends StatelessWidget {
               ),
           ],
         ),
-        AppSizes.h(8),
+        AppSizes.h(3),
         Text(
           name,
           overflow: TextOverflow.ellipsis,
