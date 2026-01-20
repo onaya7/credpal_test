@@ -80,7 +80,7 @@ class CustomButton extends StatelessWidget {
         ),
         onPressed: isLoading || disabled ? null : _handleButtonPress,
         child: isLoading
-            ? const Center(child: CircularProgressIndicator(color: AppColor.white, strokeWidth: 2))
+            ? const Center(child: CircularProgressIndicator.adaptive( backgroundColor: AppColor.white, strokeWidth: 2))
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

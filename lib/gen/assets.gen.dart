@@ -59,8 +59,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/scan.svg
   SvgGenImage get scan => const SvgGenImage('assets/icons/scan.svg');
 
+  /// File path: assets/icons/search-normal.svg
+  SvgGenImage get searchNormal =>
+      const SvgGenImage('assets/icons/search-normal.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [ic1, scan];
+  List<SvgGenImage> get values => [ic1, scan, searchNormal];
 }
 
 class $AssetsImagesGen {
@@ -83,6 +87,36 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/img6.png
   AssetGenImage get img6 => const AssetGenImage('assets/images/img6.png');
+
+  /// File path: assets/images/logo1.png
+  AssetGenImage get logo1 => const AssetGenImage('assets/images/logo1.png');
+
+  /// File path: assets/images/logo10.png
+  AssetGenImage get logo10 => const AssetGenImage('assets/images/logo10.png');
+
+  /// File path: assets/images/logo2.png
+  AssetGenImage get logo2 => const AssetGenImage('assets/images/logo2.png');
+
+  /// File path: assets/images/logo3.png
+  AssetGenImage get logo3 => const AssetGenImage('assets/images/logo3.png');
+
+  /// File path: assets/images/logo4.png
+  AssetGenImage get logo4 => const AssetGenImage('assets/images/logo4.png');
+
+  /// File path: assets/images/logo5.png
+  AssetGenImage get logo5 => const AssetGenImage('assets/images/logo5.png');
+
+  /// File path: assets/images/logo6.png
+  AssetGenImage get logo6 => const AssetGenImage('assets/images/logo6.png');
+
+  /// File path: assets/images/logo7.png
+  AssetGenImage get logo7 => const AssetGenImage('assets/images/logo7.png');
+
+  /// File path: assets/images/logo8.png
+  AssetGenImage get logo8 => const AssetGenImage('assets/images/logo8.png');
+
+  /// File path: assets/images/logo9.png
+  AssetGenImage get logo9 => const AssetGenImage('assets/images/logo9.png');
 
   /// File path: assets/images/subimg1.png
   AssetGenImage get subimg1 => const AssetGenImage('assets/images/subimg1.png');
@@ -110,6 +144,16 @@ class $AssetsImagesGen {
     img4,
     img5,
     img6,
+    logo1,
+    logo10,
+    logo2,
+    logo3,
+    logo4,
+    logo5,
+    logo6,
+    logo7,
+    logo8,
+    logo9,
     subimg1,
     subimg2,
     subimg3,

@@ -1,7 +1,9 @@
 import 'package:credpal/core/components/custom_appbar.dart';
+import 'package:credpal/core/components/custom_inputfield.dart';
 import 'package:credpal/core/components/custom_scaffold.dart';
 import 'package:credpal/core/constants/app_color.dart';
 import 'package:credpal/core/constants/app_size.dart';
+import 'package:credpal/feature/home/data/model/merchant_model.dart';
 import 'package:credpal/feature/home/data/model/product_model.dart';
 import 'package:credpal/feature/home/presentation/widget/flexiblespace.dart';
 import 'package:credpal/feature/home/presentation/widget/merchantavatar.dart';
@@ -9,8 +11,23 @@ import 'package:credpal/feature/home/presentation/widget/productcard.dart';
 import 'package:credpal/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  final TextEditingController searchController = TextEditingController();
+  final FocusNode searchFocusNode = FocusNode();
+
+  @override
+  void dispose() {
+    super.dispose();
+    searchController.dispose();
+    searchFocusNode.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +42,14 @@ class HomeView extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(20, 18, 20, 24),
             child: Row(
               children: [
-                Expanded(child: Placeholder(fallbackHeight: 40)),
+                Expanded(
+                  child: CustomInputField(
+                    controller: searchController,
+                    currentFocus: searchFocusNode,
+                    hintText: 'Search for products or stores',
+                    prefixIconPath: Assets.icons.searchNormal.path,
+                  ),
+                ),
                 AppSizes.w(20),
                 Container(
                   width: 45,
@@ -119,7 +143,15 @@ class HomeView extends StatelessWidget {
                     crossAxisSpacing: 16,
                     childAspectRatio: 1,
                   ),
-                  children: List.generate(6, (index) => MerchantAvatar()),
+                  children: List.generate(merchants.length, (index) {
+                    final merchant = merchants[index];
+                    return MerchantAvatar(
+                      name: merchant.name,
+                      logoUrl: merchant.logoUrl,
+                      colorCode: merchant.colorCode,
+                      isOnline: merchant.isOnline,
+                    );
+                  }),
                 ),
               ],
             ),
@@ -180,4 +212,17 @@ final List<ProductModel> secondCategory = [
     imagePath: Assets.images.img6.path,
     logoPath: Assets.images.subimg6.path,
   ),
+];
+
+final List<MerchantModel> merchants = [
+  MerchantModel(name: 'Justrite', logoUrl: Assets.images.logo1.path, colorCode: AppColor.purple500, isOnline: true),
+  MerchantModel(name: 'Orile Restaurant', logoUrl: Assets.images.logo2.path, colorCode: AppColor.black, isOnline: true),
+  MerchantModel(name: 'Slot', logoUrl: Assets.images.logo3.path, colorCode: AppColor.red100, isOnline: true),
+  MerchantModel(name: 'Pointek', logoUrl: Assets.images.logo4.path, colorCode: AppColor.blue200, isOnline: true),
+  MerchantModel(name: 'ogabassey', logoUrl: Assets.images.logo5.path, colorCode: AppColor.grey100, isOnline: true),
+  MerchantModel(name: 'Casper Stores', logoUrl: Assets.images.logo6.path, colorCode: AppColor.red200, isOnline: false),
+  MerchantModel(name: 'Dreamworks', logoUrl: Assets.images.logo7.path, colorCode: AppColor.purple700, isOnline: false),
+  MerchantModel(name: 'Hubmart', logoUrl: Assets.images.logo8.path, colorCode: AppColor.black, isOnline: true),
+  MerchantModel(name: 'Just Used', logoUrl: Assets.images.logo9.path, colorCode: AppColor.blue300, isOnline: true),
+  MerchantModel(name: 'Just fones', logoUrl: Assets.images.logo10.path, colorCode: AppColor.black, isOnline: true),
 ];
