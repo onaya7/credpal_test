@@ -40,9 +40,26 @@ class Flexiblespace extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Shopping limit: ₦0',
-                  style: TextStyle(color: AppColor.blue100, fontSize: 12, fontWeight: FontWeight.w500),
+                Text.rich(
+                  TextSpan(
+                    text: 'Shopping limit: ',
+                    style: TextStyle(color: AppColor.blue100, fontSize: 12, fontWeight: FontWeight.w500),
+                    children: [
+                      TextSpan(
+                        text: '₦',
+                        style: TextStyle(
+                          color: AppColor.blue100,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Roboto',
+                        ),
+                      ),
+                      TextSpan(
+                        text: '0',
+                        style: TextStyle(color: AppColor.blue100, fontSize: 12, fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
                 ),
                 AppSizes.h(8),
                 CustomButton(onPressed: () {}, text: 'Activate Credit', width: 163),

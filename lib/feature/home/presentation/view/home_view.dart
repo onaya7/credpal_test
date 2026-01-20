@@ -165,24 +165,24 @@ class _HomeViewState extends State<HomeView> {
 final List<ProductModel> firstCategory = [
   ProductModel(
     title: 'Nokia G20',
-    price: '₦ 39,780',
-    oldPrice: '₦ 88,000',
+    price: '39,780',
+    oldPrice: '88,000',
     imagePath: Assets.images.img1.path,
     logoPath: Assets.images.subimg1.path,
   ),
 
   ProductModel(
     title: 'iPhone XS Max 4GB..',
-    price: '₦ 295,999',
-    oldPrice: '₦ 315,000',
+    price: '295,999',
+    oldPrice: '315,000',
     imagePath: Assets.images.img2.path,
     logoPath: Assets.images.subimg2.path,
   ),
 
   ProductModel(
     title: 'Masterchef Pressure Cooker',
-    price: '₦ 39,780',
-    oldPrice: '₦ 88,000',
+    price: '39,780',
+    oldPrice: '88,000',
     imagePath: Assets.images.img3.path,
     logoPath: Assets.images.subimg3.path,
   ),
@@ -191,24 +191,24 @@ final List<ProductModel> firstCategory = [
 final List<ProductModel> secondCategory = [
   ProductModel(
     title: 'Anker Soundcore Life P2',
-    price: '₦ 39,780',
-    oldPrice: '₦ 88,000',
+    price: '39,780',
+    oldPrice: '88,000',
     imagePath: Assets.images.img4.path,
     logoPath: Assets.images.subimg4.path,
   ),
 
   ProductModel(
     title: 'iPhone 12 Pro',
-    price: '₦ 490,500',
-    oldPrice: '₦ 515,000',
+    price: '490,500',
+    oldPrice: '515,000',
     imagePath: Assets.images.img5.path,
     logoPath: Assets.images.subimg5.path,
   ),
 
   ProductModel(
     title: 'PS4 Controller',
-    price: '₦ 39,780',
-    oldPrice: '₦ 88,000',
+    price: '39,780',
+    oldPrice: '88,000',
     imagePath: Assets.images.img6.path,
     logoPath: Assets.images.subimg6.path,
   ),

@@ -147,4 +147,4 @@ Here are the screenshots of the app on Android & iOS devices:
 
 ## Apk Download
 
-You can download the APK file from [here]().
+You can download the APK file from [here](https://drive.google.com/file/d/1af2tlqteUbAjKyZDb-NnKbd2M73j_qfM/view?usp=sharing).

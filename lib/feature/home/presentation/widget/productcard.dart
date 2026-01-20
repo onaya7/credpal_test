@@ -44,28 +44,54 @@ class ProductCard extends StatelessWidget {
                       Text(
                         title,
                         overflow: TextOverflow.ellipsis,
-
                         style: TextStyle(color: AppColor.black, fontSize: 14, fontWeight: FontWeight.w700),
                       ),
                       AppSizes.h(4),
                       Row(
                         children: [
-                          Text(
-                            price,
+                          Text.rich(
+                            TextSpan(
+                              text: '₦ ',
+                              style: TextStyle(
+                                color: AppColor.primary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800,
+                                fontFamily: 'Roboto',
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: price,
+                                  style: TextStyle(color: AppColor.primary, fontSize: 14, fontWeight: FontWeight.w800),
+                                ),
+                              ],
+                            ),
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: AppColor.primary, fontSize: 14, fontWeight: FontWeight.w800),
                           ),
                           AppSizes.w(14),
                           Flexible(
-                            child: Text(
-                              oldPrice,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: AppColor.purple600,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                decoration: TextDecoration.lineThrough,
+                            child: Text.rich(
+                              TextSpan(
+                                text: '₦ ',
+                                style: TextStyle(
+                                  color: AppColor.purple600,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: TextDecoration.lineThrough,
+                                  fontFamily: 'Roboto',
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: oldPrice,
+                                    style: TextStyle(
+                                      color: AppColor.purple600,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      decoration: TextDecoration.lineThrough,
+                                    ),
+                                  ),
+                                ],
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ],
