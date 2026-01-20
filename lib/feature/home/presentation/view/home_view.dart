@@ -2,6 +2,7 @@ import 'package:credpal/core/components/custom_appbar.dart';
 import 'package:credpal/core/components/custom_scaffold.dart';
 import 'package:credpal/core/constants/app_color.dart';
 import 'package:credpal/core/constants/app_size.dart';
+import 'package:credpal/feature/home/data/model/product_model.dart';
 import 'package:credpal/feature/home/presentation/widget/flexiblespace.dart';
 import 'package:credpal/feature/home/presentation/widget/merchantavatar.dart';
 import 'package:credpal/feature/home/presentation/widget/productcard.dart';
@@ -45,26 +46,42 @@ class HomeView extends StatelessWidget {
                 SizedBox(
                   height: 174,
                   child: ListView.separated(
+                    physics: AlwaysScrollableScrollPhysics(),
                     padding: EdgeInsets.only(right: 20),
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return ProductCard();
-                    },
                     separatorBuilder: (context, index) => AppSizes.w(24),
-                    itemCount: 3,
+                    itemCount: firstCategory.length,
+                    itemBuilder: (context, index) {
+                      final product = firstCategory[index];
+                      return ProductCard(
+                        title: product.title,
+                        price: product.price,
+                        oldPrice: product.oldPrice,
+                        imagePath: product.imagePath,
+                        logoPath: product.logoPath,
+                      );
+                    },
                   ),
                 ),
                 AppSizes.h(24),
                 SizedBox(
                   height: 174,
                   child: ListView.separated(
+                    physics: AlwaysScrollableScrollPhysics(),
                     padding: EdgeInsets.only(right: 20),
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return ProductCard();
-                    },
                     separatorBuilder: (context, index) => AppSizes.w(24),
-                    itemCount: 3,
+                    itemCount: secondCategory.length,
+                    itemBuilder: (context, index) {
+                      final product = secondCategory[index];
+                      return ProductCard(
+                        title: product.title,
+                        price: product.price,
+                        oldPrice: product.oldPrice,
+                        imagePath: product.imagePath,
+                        logoPath: product.logoPath,
+                      );
+                    },
                   ),
                 ),
               ],
@@ -112,3 +129,55 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+
+final List<ProductModel> firstCategory = [
+  ProductModel(
+    title: 'Nokia G20',
+    price: '₦ 39,780',
+    oldPrice: '₦ 88,000',
+    imagePath: Assets.images.img1.path,
+    logoPath: Assets.images.subimg1.path,
+  ),
+
+  ProductModel(
+    title: 'iPhone XS Max 4GB..',
+    price: '₦ 295,999',
+    oldPrice: '₦ 315,000',
+    imagePath: Assets.images.img2.path,
+    logoPath: Assets.images.subimg2.path,
+  ),
+
+  ProductModel(
+    title: 'Masterchef Pressure Cooker',
+    price: '₦ 39,780',
+    oldPrice: '₦ 88,000',
+    imagePath: Assets.images.img3.path,
+    logoPath: Assets.images.subimg3.path,
+  ),
+];
+
+final List<ProductModel> secondCategory = [
+  ProductModel(
+    title: 'Anker Soundcore Life P2',
+    price: '₦ 39,780',
+    oldPrice: '₦ 88,000',
+    imagePath: Assets.images.img4.path,
+    logoPath: Assets.images.subimg4.path,
+  ),
+
+  ProductModel(
+    title: 'iPhone 12 Pro',
+    price: '₦ 490,500',
+    oldPrice: '₦ 515,000',
+    imagePath: Assets.images.img5.path,
+    logoPath: Assets.images.subimg5.path,
+  ),
+
+  ProductModel(
+    title: 'PS4 Controller',
+    price: '₦ 39,780',
+    oldPrice: '₦ 88,000',
+    imagePath: Assets.images.img6.path,
+    logoPath: Assets.images.subimg6.path,
+  ),
+];

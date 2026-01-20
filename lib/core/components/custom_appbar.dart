@@ -45,6 +45,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return AppBar(
+      scrolledUnderElevation: 0,
       toolbarHeight: height ?? kToolbarHeight,
       title: (title != null)
           ? title ?? const SizedBox.shrink()

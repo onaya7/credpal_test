@@ -13,6 +13,7 @@ class AppColor {
   static const Color purple300 = Color(0xFF9494B8);
   static const Color purple400 = Color(0xFFF4F5FE);
   static const Color purple500 = Color(0xFF000065);
+  static const Color purple600 = Color(0xFFB3B3CC);
 
   // White Shades
 
